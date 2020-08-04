@@ -1,4 +1,6 @@
-node {
+node('java-docker-slave') {
+   // Will run on the slave with name or tag specialSlave
+}
   stage("Main") {
 
     checkout scm
