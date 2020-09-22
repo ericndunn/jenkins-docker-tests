@@ -1,16 +1,7 @@
-FROM python:3
+#This is a sample Image 
+FROM ubuntu 
+MAINTAINER demousr@gmail.com 
 
-# set a directory for the app
-WORKDIR /usr/src/app
-
-# copy all the files to the container
-COPY . .
-
-# install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# define the port number the container should expose
-EXPOSE 5000
-
-# run the command
-CMD ["python", "./app.py"]
+RUN apt-get update 
+RUN apt-get install –y nginx 
+CMD [“echo”,”Image created”] 
