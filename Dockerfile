@@ -1,7 +1,16 @@
-# Filename: Dockerfile 
-FROM node:10-alpine
+FROM python:3
+
+# set a directory for the app
 WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
+
+# copy all the files to the container
 COPY . .
-EXPOSE 3000
+
+# install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# define the port number the container should expose
+EXPOSE 5000
+
+# run the command
+CMD ["python", "./app.py"]
